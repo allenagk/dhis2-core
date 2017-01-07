@@ -5,10 +5,8 @@ addons:
   apt:
     packages:
     - oracle-java8-installer
-before_script:
-- "echo $JAVA_OPTS"
-- "export JAVA_OPTS=-Xmx2048m"
-
+before_install:
+  - echo "MAVEN_OPTS='-Xmx2g'" > ~/.mavenrc
 script:
 - mvn clean test -f ./dhis-2/pom-full.xml
 
