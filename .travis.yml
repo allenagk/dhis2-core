@@ -7,16 +7,14 @@ addons:
     - oracle-java8-installer
 script:
 - MAVEN_SKIP_RC=true MAVEN_OPTS="-Xss4M" mvn clean test -f ./dhis-2/pom-full.xml
-
 cache:
   directories:
   - $HOME/.m2
-  
 branches:
   only:
   - master
   - /^2\.[0-9]{1,}/
-
+  - travis
 notifications:
   slack:
     rooms:
